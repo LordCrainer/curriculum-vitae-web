@@ -25,12 +25,14 @@
   import { defineAsyncComponent } from 'vue'
   import { ref } from 'vue'
   import { User } from 'src/api/user/user.interface'
+  import { LocaleSort, Languages } from 'src/locales/domain/locale.interface'
 
   // import CustomInput from 'src/components/CustomInput.vue'
   //Async Components
   const AsyncInput = defineAsyncComponent(() => import('src/components/CustomInput.vue'))
 
   const { t, locale, availableLocales } = useI18n()
+
   const emit = defineEmits(['update'])
 
   const getUser = (): void => {

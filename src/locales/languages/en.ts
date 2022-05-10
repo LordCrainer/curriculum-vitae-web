@@ -7,10 +7,10 @@ const enLanguages: Languages['en'] = {
   },
   states: {
     user: {
-      created: '',
-      deleted: '',
-      disabled: '',
-      updated: '',
+      created: 'Created User',
+      deleted: 'Deleted User',
+      disabled: 'Disabled User',
+      updated: 'Updated User',
     },
   },
   pages: {
