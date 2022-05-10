@@ -8,8 +8,8 @@
       </q-select>
     </div>
 
-    <img alt="Vue logo" src="/src/assets/img/logo.png" @click="getUser" />
-    <HelloWorld :msg="t('index.msg')" />
+    <img class="pa-5" alt="Vue logo" src="/src/assets/img/logo.png" @click="getUser" />
+    <HelloWorld :msg="t('pages.index.msg')" />
     <span class="accent-color"> 22 </span>
     {{ count }}
     <AsyncInput v-model="count" />

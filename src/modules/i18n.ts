@@ -3,15 +3,14 @@
  * https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n
  * https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n
  */
-import { Languages } from 'src/locales/locale.interface'
-import { createI18n, I18nOptions } from 'vue-i18n'
-const localesList = Object.entries(import.meta.globEager('/src/locales/*.locale.ts')).map(
+import { createI18n } from 'vue-i18n'
+const localesList = Object.entries(import.meta.globEager('/src/locales/languages/*.ts')).map(
   ([key, value]) => {
-    const nameFile = key.split('/').slice(-1)[0]
-    const locale = nameFile.slice(0, 2)
-    return [locale, value.default]
+    const nameFile = key.split('.')[0].slice(-2)
+    return [nameFile, value.default]
   }
 )
+
 const messages = Object.fromEntries(localesList)
 
 export const install = (app: any) => {
