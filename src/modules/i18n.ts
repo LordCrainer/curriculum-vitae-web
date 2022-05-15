@@ -25,5 +25,6 @@ export const install = (app: any) => {
     locale: 'es',
     messages: traductions,
   })
+
   app.use(i18n)
 }

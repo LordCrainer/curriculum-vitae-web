@@ -18,6 +18,16 @@ const enLanguages: Languages['en'] = {
       msg: 'Try typescript',
     },
   },
+  layout: {
+    tabs: {
+      about: 'About',
+      briefcase: 'briefcase',
+      home: 'home',
+    },
+  },
+  words: {
+    me: 'me',
+  },
 }
 
 export default enLanguages

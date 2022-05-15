@@ -5,11 +5,28 @@
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
         <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
+          <q-avatar square size="48px">
+            <!-- <q-img src="/src/assets/img/cagm_white.svg" spinner-color="white" style="height: 54px; max-width: 150px"/> -->
+            <img src="/src/assets/img/cagm_white.svg" />
           </q-avatar>
-          Title
+          <!-- Curriculum Vitae -->
         </q-toolbar-title>
+        <q-space />
+
+        <q-select v-model="locale" :options="availableLocales" label="label">
+          <!-- <template v-slot:prepend>
+            <q-icon :name="matLanguage" />
+          </template> -->
+        </q-select>
+
+        <q-tabs v-model="tab" shrink>
+          <q-tab
+            v-for="tab in tabsList"
+            :key="tab.slug"
+            :name="tab.slug"
+            :label="t(`layout.tabs.${tab.slug}`)"
+            @click="router.push({ path: tab.path })" />
+        </q-tabs>
       </q-toolbar>
     </q-header>
 
@@ -27,22 +44,47 @@
     </q-drawer>
 
     <q-page-container>
-      <div class="py-2 mx-auto text-center text-sm">[Default Layout]</div>
+      <!-- <div class="py-2 mx-auto text-center text-sm">[Default Layout]</div> -->
       <router-view v-slot="{ Component }">
-        <transition name="slide-fade" mode="out-in">
-          <component :is="Component" />
-        </transition>
+        <!-- <transition name="slide-fade" mode="out-in"> -->
+        <component :is="Component" />
+        <!-- </transition> -->
       </router-view>
     </q-page-container>
   </q-layout>
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue'
+  import { matLanguage } from '@quasar/extras/material-icons'
+  import { Ref, ref } from 'vue'
+  import { useI18n } from 'vue-i18n'
   import { useRouter } from 'vue-router'
-
   import generatedRoutes from '~pages'
+  const { t, locale, availableLocales } = useI18n()
   const router = useRouter()
+  interface Tabs {
+    name: string
+    slug: string
+    path: string
+  }
+  const tab = ref('')
+  const tabsList: Ref<Tabs[]> = ref([
+    {
+      name: 'Home',
+      slug: 'home',
+      path: '/',
+    },
+    {
+      name: 'Portafolio',
+      slug: 'briefcase',
+      path: '/briefcase',
+    },
+    {
+      name: 'Sobre Mi',
+      slug: 'about',
+      path: '/about',
+    },
+  ])
 
   const leftDrawerOpen = ref<boolean>(false)
   const toggleLeftDrawer = () => {

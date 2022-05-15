@@ -18,6 +18,16 @@ const esLanguages: Languages['es'] = {
       msg: 'Intentar typescript',
     },
   },
+  layout: {
+    tabs: {
+      about: 'Sobre',
+      briefcase: 'Portafolio',
+      home: 'Inicio',
+    },
+  },
+  words: {
+    me: 'mi',
+  },
 }
 
 export default esLanguages

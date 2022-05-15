@@ -1,6 +1,6 @@
 <template>
   <div class="column flex-center pa-4">
-    <div class="w-20% text-right">
+    <div class="w-50% text-right">
       <q-select v-model="locale" :options="availableLocales" label="choose your language">
         <template v-slot:prepend>
           <q-icon :name="matLanguage" />
@@ -9,7 +9,7 @@
     </div>
 
     <img class="pa-5" alt="Vue logo" src="/src/assets/img/logo.png" @click="getUser" />
-    <HelloWorld :msg="t('pages.index.msg')" />
+    <HelloWorld :msg="t('pages.index.')" />
     <span class="accent-color"> 22 </span>
     {{ count }}
     <AsyncInput v-model="count" />
@@ -25,7 +25,6 @@
   import { defineAsyncComponent } from 'vue'
   import { ref } from 'vue'
   import { User } from 'src/api/user/user.interface'
-  import { LocaleSort, Languages } from 'src/locales/domain/locale.interface'
 
   // import CustomInput from 'src/components/CustomInput.vue'
   //Async Components
