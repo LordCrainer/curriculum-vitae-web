@@ -2,7 +2,7 @@
   <div class="column flex-center pa-4">
     <div class="row justify-center">
       <div class="text-h4 text-uppercase text-center">
-        {{ t('layout.tabs.about') }} {{ t('words.me') }}
+        {{ aboutMe }}
       </div>
     </div>
     <q-layout view="lHh lpr lFf" container style="height: 400px" class="shadow-2 rounded-borders">
@@ -20,6 +20,7 @@
   import { useI18n } from 'vue-i18n'
 
   const { t } = useI18n()
+  const aboutMe = `${t('layout.tabs.about')} ${t('words.me')}`
 </script>
 
 <style lang="scss" scoped></style>

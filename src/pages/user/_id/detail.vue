@@ -2,20 +2,25 @@
   <q-page class="pa-4 text-gray-500">
     <span> Current User: {{ id }}</span>
 
-    <p class="text-sm mt-4">
-     Other users
+    <p class="text-sm mt-4">Other users</p>
+    <div>
       <ul>
-        <li class="cursor-pointer text-dark-100 px-4 py-2" v-for="item in user.otherIds" :key="item" @click="router.push({name:'user-id-detail', params:{id: item}})"> {{item}}</li>
+        <li
+          class="cursor-pointer text-dark-100 px-4 py-2"
+          v-for="item in user.otherIds"
+          :key="item"
+          @click="router.push({ name: 'user-id-detail', params: { id: item } })">
+          11 {{ item }}
+        </li>
       </ul>
-    </p>
-    
-    </q-page>
+    </div>
+  </q-page>
 </template>
 
 <script setup="props" lang="ts">
-  import { useUserStore } from 'src/stores/user'
+  import { useUserStore } from 'src/api/user/stores/user'
   import { watchEffect } from 'vue'
-import { useRouter } from 'vue-router'
+  import { useRouter } from 'vue-router'
 
   const router = useRouter()
   const user = useUserStore()
@@ -25,5 +30,3 @@ import { useRouter } from 'vue-router'
     user.setNewId(props.id)
   })
 </script>
-
-<style lang="scss" scoped></style>

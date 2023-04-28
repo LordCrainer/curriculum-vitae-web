@@ -6,8 +6,7 @@
       greedy
       class="q-gutter-md"
       @submit.prevent.stop="onSubmit"
-      @reset="onReset"
-    >
+      @reset="onReset">
       <q-input
         v-model="form.name"
         outlined
@@ -16,8 +15,7 @@
         hint="Name and surname"
         lazy-rules
         :dense="dense"
-        :rules="rules.name"
-      >
+        :rules="rules.name">
         <template #label>
           <div><span class="text-red-5">*</span> Name</div>
         </template>
@@ -29,8 +27,7 @@
         type="number"
         label="Your age *"
         lazy-rules
-        :rules="rules.age"
-      />
+        :rules="rules.age" />
 
       <q-input v-model="form.time" filled type="time" hint="Native time" />
 
@@ -62,12 +59,11 @@
         </template>
       </q-input>
 
-      <q-field ref="fieldRef" filled stack-label :rules="rules.accept">
+      <q-field ref="fieldRef" filled stack-label :model-value="form.accept" :rules="rules.accept">
         <template #control>
           <q-toggle v-model="form.accept" label="I accept the license and terms" />
         </template>
       </q-field>
-
       <div>
         <q-btn label="提交" type="submit" color="primary" />
         <q-btn label="重置" type="reset" color="primary" flat class="q-ml-sm" />
@@ -89,11 +85,10 @@
     time: '10:56',
     accept: false,
   })
+  const slider = ref(50)
+  const fieldRef = ref(null)
   const rules = {
-    name: [
-      (val: string) => (val && val.length > 0) || 'Please type something',
-      'hexColor' || '请输入',
-    ],
+    name: [(val: string) => (val && val.length > 0) || 'Please type something'],
     // may this be more powerful
     // name: [
     //   { required: true, message: '请输入活动名称' },
@@ -105,10 +100,17 @@
       (val: number) => (val !== null && val > 0) || 'Please type your age',
       (val: number) => (val > 0 && val < 100) || 'Please type a real age',
     ],
-    accept: [(val: boolean) => !!val || 'You need to accept the license and terms first'],
+    accept: [
+      (val: boolean) => {
+        console.log('val', val)
+        return !!val || 'You need to accept the license and terms first'
+      },
+    ],
   }
   function onSubmit() {}
-  function onReset() {}
+  function onReset() {
+    console.log('reset')
+  }
 </script>
 <style lang="scss" scoped>
   .q-gutter-md {
