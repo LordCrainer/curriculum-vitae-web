@@ -85,7 +85,6 @@
     time: '10:56',
     accept: false,
   })
-  const slider = ref(50)
   const fieldRef = ref(null)
   const rules = {
     name: [(val: string) => (val && val.length > 0) || 'Please type something'],

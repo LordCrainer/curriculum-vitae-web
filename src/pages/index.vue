@@ -1,11 +1,10 @@
 <template>
   <div class="column">
-    <div class="column flex-center pa-4">
+    <div class="row flex-center pa-4">
+      <h1>Prueba</h1>
       <img class="pa-5" alt="Vue logo" src="/src/assets/img/logo.png" @click="getUser" />
     </div>
-    <div class="container">
-      <waveAnimation></waveAnimation>
-    </div>
+    <waveAnimation></waveAnimation>
   </div>
 </template>
 
@@ -37,13 +36,3 @@
     // })
   }
 </script>
-
-<style lang="scss" scoped>
-  .container {
-    position: relative;
-    text-align: center;
-    // background: green;
-    color: black;
-    width: 100%;
-  }
-</style>

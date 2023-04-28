@@ -1,7 +1,7 @@
 <template>
   <div>
     <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
-      <menuToolbarVue></menuToolbarVue>
+      <menuToolbarVue :generated-routes="generatedRoutes"></menuToolbarVue>
     </q-drawer>
 
     <q-header elevated class="bg-primary text-white text-left">
@@ -41,6 +41,7 @@
   import { useI18n } from 'vue-i18n'
   import { useRouter } from 'vue-router'
   import menuToolbarVue from 'src/api/shared/layout/menuToolbar.vue'
+  import generatedRoutes from '~pages'
   const router = useRouter()
 
   const props = defineProps<{ tabsList: any; leftDrawerOpen?: boolean }>()
