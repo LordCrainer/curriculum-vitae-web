@@ -21,14 +21,11 @@ export interface Languages {
 }
 
 interface LayoutDefines {
-  tabs: TabsDefines
+  tabs: Record<Tabs, string>
 }
 
-interface TabsDefines {
-  home: string
-  briefcase: string
-  about: string
-}
+export type Tabs = keyof PagesDefines
+
 // import { Locale } from './domain/locale.interface'
 
 // //解析单个文件

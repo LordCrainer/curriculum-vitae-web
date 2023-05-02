@@ -12,6 +12,7 @@ const localesList = Object.entries(import.meta.globEager('/src/locales/languages
     return [nameFile, value.default]
   }
 )
+
 declare module 'vue-i18n' {
   export interface DefineLocaleMessage extends LocaleSort {}
   // export const data = ""

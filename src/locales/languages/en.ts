@@ -14,8 +14,16 @@ const enLanguages: Languages['en'] = {
     },
   },
   pages: {
-    index: {
-      msg: 'Try typescript',
+    home: {
+      iam: "I'm Carlos García!",
+      slogan: 'Learn, Develop and Teach',
+      knownlegdeArea: 'Knownledge Area',
+    },
+    about: {
+      title: 'About Me',
+    },
+    briefcase: {
+      title: 'BriefCase',
     },
   },
   layout: {

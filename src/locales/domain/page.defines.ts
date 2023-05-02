@@ -1,7 +1,18 @@
 export interface PagesDefines {
-  index: IndexPage
+  home: HomePage
+  about: AboutPage
+  briefcase: BriefCasePage
 }
 
-interface IndexPage {
-  msg: string
+interface HomePage {
+  iam: string
+  slogan: string
+  knownlegdeArea: string
+}
+interface AboutPage {
+  title: string
+}
+
+interface BriefCasePage {
+  title: string
 }

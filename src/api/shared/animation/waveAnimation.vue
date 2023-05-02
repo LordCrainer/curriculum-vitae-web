@@ -12,12 +12,23 @@
         d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
     </defs>
     <g class="parallax">
-      <use xlink:href="#gentle-wave" x="25" y="0" fill="#fd6601" />
-      <use xlink:href="#gentle-wave" x="55" y="3" fill="#08365b" />
+      <use xlink:href="#gentle-wave" x="25" y="0" />
+      <use xlink:href="#gentle-wave" x="55" y="3" />
     </g>
   </svg>
 </template>
 <style lang="scss" scoped>
+  #gentle-wave use:nth-child(1) {
+    fill: $primary;
+  }
+
+  .parallax > use:nth-child(1) {
+    fill: $primary;
+  }
+
+  .parallax > use:nth-child(2) {
+    fill: $secondary;
+  }
   .waves {
     position: relative;
     width: 100%;
