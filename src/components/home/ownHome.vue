@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
   import { ref } from 'vue'
-  import WaveAnimation from '../shared/animation/waveAnimation.vue'
+  import WaveAnimation from '../../components/shared/animation/waveAnimation.vue'
   import { useI18n } from 'vue-i18n'
   // Locale
   const { t } = useI18n()

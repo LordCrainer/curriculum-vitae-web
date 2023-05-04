@@ -22,13 +22,6 @@
     fill: $primary;
   }
 
-  .parallax > use:nth-child(1) {
-    fill: $primary;
-  }
-
-  .parallax > use:nth-child(2) {
-    fill: $secondary;
-  }
   .waves {
     position: relative;
     width: 100%;
@@ -37,24 +30,17 @@
     min-height: 50px;
     max-height: 100px;
   }
-  .wave-1 {
-    background-color: $primary;
-  }
-  .wave-2 {
-    background-color: $primary;
-  }
-  .wave-3 {
-    background-color: $primary;
-  }
 
   .parallax > use {
     animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
   }
   .parallax > use:nth-child(1) {
+    fill: $primary;
     animation-delay: -1s;
     animation-duration: 7s;
   }
   .parallax > use:nth-child(2) {
+    fill: $secondary;
     animation-delay: -3s;
     animation-duration: 10s;
   }

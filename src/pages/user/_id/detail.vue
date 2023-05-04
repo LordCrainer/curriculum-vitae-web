@@ -18,7 +18,7 @@
 </template>
 
 <script setup="props" lang="ts">
-  import { useUserStore } from 'src/api/user/stores/user'
+  import { useUserStore } from 'src/components/user/user'
   import { watchEffect } from 'vue'
   import { useRouter } from 'vue-router'
 
