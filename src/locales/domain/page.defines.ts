@@ -2,6 +2,7 @@ export interface PagesDefines {
   home: HomePage
   about: AboutPage
   briefcase: BriefCasePage
+  jobs: JobsPage
 }
 
 interface HomePage {
@@ -14,5 +15,9 @@ interface AboutPage {
 }
 
 interface BriefCasePage {
+  title: string
+}
+
+interface JobsPage {
   title: string
 }

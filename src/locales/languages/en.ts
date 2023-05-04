@@ -25,12 +25,16 @@ const enLanguages: Languages['en'] = {
     briefcase: {
       title: 'BriefCase',
     },
+    jobs: {
+      title: 'Jobs',
+    },
   },
   layout: {
     tabs: {
       about: 'About',
       briefcase: 'briefcase',
       home: 'home',
+      jobs: 'Jobs',
     },
   },
   words: {
