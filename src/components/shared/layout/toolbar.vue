@@ -40,14 +40,17 @@
   import { ref } from 'vue'
   import { useI18n } from 'vue-i18n'
   import { useRouter } from 'vue-router'
-  import menuToolbarVue from 'src/api/shared/layout/menuToolbar.vue'
+  import menuToolbarVue from 'src/components/shared/layout/menuToolbar.vue'
   import generatedRoutes from '~pages'
+  import { TabsList } from 'src/components/shared/layout/layout.interface'
+
   const router = useRouter()
-
-  const props = defineProps<{ tabsList: any; leftDrawerOpen?: boolean }>()
-
+  const props = defineProps<{ tabsList: TabsList[]; leftDrawerOpen?: boolean }>()
   const { t, locale, availableLocales } = useI18n()
+  // VARIABLE
   const tab = ref('')
+
+  // DRAWER
   const leftDrawerOpen = ref<boolean>(false)
   const toggleLeftDrawer = () => {
     leftDrawerOpen.value = !leftDrawerOpen.value

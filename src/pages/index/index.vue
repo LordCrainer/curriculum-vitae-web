@@ -6,6 +6,6 @@
 </template>
 
 <script setup="props, { emit }" lang="ts">
-  import Aboutme from 'src/api/home/aboutme.vue'
-  import OwnHome from 'src/api/home/ownHome.vue'
+  import Aboutme from 'src/components/home/aboutme.vue'
+  import OwnHome from 'src/components/home/ownHome.vue'
 </script>

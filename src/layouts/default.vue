@@ -15,14 +15,11 @@
 
 <script setup lang="ts">
   // import { matLanguage } from '@quasar/extras/material-icons'
-  import toolbar from 'src/api/shared/layout/toolbar.vue'
+  import { TabsList } from 'src/components/shared/layout/layout.interface'
+import toolbar from 'src/components/shared/layout/toolbar.vue'
   import { Ref, ref } from 'vue'
-  interface Tabs {
-    name: string
-    slug: string
-    path: string
-  }
-  const tabsList: Ref<Tabs[]> = ref([
+
+  const tabsList: Ref<TabsList[]> = ref([
     {
       name: 'Home',
       slug: 'home',

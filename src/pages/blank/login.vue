@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
   import { useQuasar } from 'quasar'
-  import { userApi } from 'src/api/user'
+  import { userApi } from 'src/components/user'
 
   const $q = useQuasar()
   const onLogin = () => {

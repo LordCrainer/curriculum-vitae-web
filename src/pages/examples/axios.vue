@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-  import { userApi } from 'src/api/user'
+  import { userApi } from 'src/components/user'
   import { reactive, ref, toRef } from 'vue'
   let state = reactive({ content: {}, createdTime: null })
 
