@@ -5,7 +5,7 @@
     </div>
     <div class="row pa-4 justify-around">
       <div class="q-px-lg q-py-md">
-        <q-timeline layout="loose" color="secondary">
+        <q-timeline dark color="secondary">
           <template v-for="item in mappedData" :key="item">
             <q-timeline-entry
               v-if="Object.keys(item.classes).length > 0"
