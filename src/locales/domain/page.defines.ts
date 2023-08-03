@@ -3,6 +3,11 @@ export interface PagesDefines {
   about: AboutPage
   briefcase: BriefCasePage
   jobs: JobsPage
+  contact: PageMetadata
+}
+
+interface PageMetadata {
+  title: string
 }
 
 interface HomePage {
@@ -10,14 +15,11 @@ interface HomePage {
   slogan: string
   knownlegdeArea: string
 }
-interface AboutPage {
-  title: string
+interface AboutPage extends PageMetadata {
 }
 
-interface BriefCasePage {
-  title: string
+interface BriefCasePage extends PageMetadata {
 }
 
-interface JobsPage {
-  title: string
+interface JobsPage extends PageMetadata {
 }

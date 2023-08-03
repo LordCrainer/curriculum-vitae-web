@@ -28,6 +28,9 @@ const esLanguages: Languages['es'] = {
     jobs: {
       title: 'Trabajos',
     },
+    contact: {
+      title: "Contacto"
+    }
   },
   layout: {
     tabs: {
@@ -35,6 +38,7 @@ const esLanguages: Languages['es'] = {
       briefcase: 'Portafolio',
       home: 'Inicio',
       jobs: 'Trabajos',
+      contact: "Contacto"
     },
   },
   words: {

@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import { setupLayouts } from 'virtual:generated-layouts'
 import generatedRoutes from '~pages'
+console.log("generateRoutes", generatedRoutes);
 
 const routes: RouteRecordRaw[] = setupLayouts(generatedRoutes)
 
