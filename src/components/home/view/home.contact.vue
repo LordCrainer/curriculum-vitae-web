@@ -1,39 +1,47 @@
 <template>
   <div class="column justify-around no-wrap" style="height: inherit">
     <div class="row justify-around items-center pa-4">
-      <div class="text-h3 text-secondary pa-4">{{ translate('pages.contact.title') }}</div>
+      <div class="text-h3 text-secondary pa-4">
+        {{ translate("pages.contact.title") }}
+      </div>
     </div>
     <div class="row pa-4 justify-around">
-      <div class="q-px-lg q-py-md">
-        <q-timeline layout="loose" dark color="secondary">
-          <template v-for="item in mappedData" :key="item">
-            <q-timeline-entry v-if="Object.keys(item.classes).length > 0" heading :class="item.classes">
-              {{ item.body[0] }}
-            </q-timeline-entry>
-
-            <q-timeline-entry v-else :title="item.title" :subtitle="item.subtitle">
-              <li class="body" v-for="list in item.body" :key="list">
-                {{ list }}
-              </li>
-              <template v-slot:title>
-                <div class="text-h6">{{ item.title }}</div>
-              </template>
-            </q-timeline-entry>
-          </template>
-        </q-timeline>
+      <div class="row " v-for="item of socialNet" :key="item.label">
+        <q-icon :color="item.color" size="4rem">
+          <i :class="item.icon"></i>
+        </q-icon>
+        <div class="text-h6 text-white q-my-auto q-pa-md">{{ item.label }}</div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
-import { homeMetadata, mappedHomeMetadata } from 'src/components/home/mock/home.metadata'
+import { useI18n } from "vue-i18n";
 // Locale
-const { t: translate } = useI18n()
+const { t: translate } = useI18n();
 
-
-const mappedData = mappedHomeMetadata(homeMetadata)
+const socialNet = [
+  {
+    icon: "fa-brands fa-bounce fa-linkedin ",
+    color: "white",
+    url: "",
+    label: "Linkedin"
+  },
+  {
+    icon: "fa-brands fa-telegram ",
+    color: "white",
+    url: "",
+    label: "Telegram"
+  },
+  {
+    icon: "fa-brands fa-whatsapp ",
+    color: "white",
+    url: "",
+    label: "Whatsapp"
+  }
+]
+// const mappedData = mappedHomeMetadata(homeMetadata);
 </script>
 
 <style scoped>

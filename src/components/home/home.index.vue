@@ -1,8 +1,8 @@
 <template>
-  <HomeInit style="height: 100vh"></HomeInit>
+  <HomeInit style="min-height: 100vh"></HomeInit>
   <HomeAbout class="background" style="height: 100vh"></HomeAbout>
-  <HomeTimeline style="height: 100vh"></HomeTimeline>
-  <HomeContact class="background" style="height: 100vh"></HomeContact>
+  <HomeTimeline style="min-height: 100vh"></HomeTimeline>
+  <HomeContact class="background" style="height: 100%"></HomeContact>
 </template>
 
 <script setup lang="ts">
